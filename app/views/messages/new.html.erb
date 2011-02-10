@@ -1,0 +1,5 @@
+<% titled new_tt(:mail) %>
+
+<%= render 'form' %>
+
+<p><%= link_to list_p(:mail), messages_path if admin? %></p>

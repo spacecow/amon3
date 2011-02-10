@@ -1,0 +1,13 @@
+<div class="form">
+<%= form_tag sessions_path, :class => :formtastic do %>
+  <li>
+    <%= label_tag :login, t(:username) %>
+    <%= text_field_tag :login, params[:login] %>
+  </li>
+  <li>
+    <%= label_tag :password, t('formtastic.labels.password') %>
+    <%= password_field_tag :password %>
+  </li>
+  <p><%= submit_tag t(:login), :class => :submit %></p>
+<% end %>
+</div> 

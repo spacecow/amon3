@@ -1,0 +1,10 @@
+<%= semantic_form_for @message do |f| %>
+  <%= f.input :name %>
+  <%= f.input :email %>
+  <%= f.input :company %>
+  <%= f.input :phone %>
+  <%= f.input :subject %>
+  <%= f.input :body %>
+  <%= f.submit t(:send), :class => :submit %>
+<% end %>
+

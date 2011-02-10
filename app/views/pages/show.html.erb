@@ -1,0 +1,16 @@
+<% require 'redcloth' %>
+
+<%= titled @page.title %>
+<%= subtitled @page.subtitle %>
+
+<div id="content">
+  <%= raw textilize(@page.content) %>
+</div>
+
+<% if admin? %>
+<p>
+  <%= link_to t(:edit), edit_page_path(@page) %> |
+  <%= link_to t(:delete), @page, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to list_p(:page), pages_path %>
+</p>
+<% end %>

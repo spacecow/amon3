@@ -1,0 +1,29 @@
+<% titled pl(:mail) %>
+
+<table>
+  <tr>
+    <th><%= formtastic(:name) %></th>
+    <th><%= formtastic(:email) %></th>
+    <th><%= formtastic(:company) %></th>
+    <th><%= formtastic(:phone) %></th>
+    <th><%= formtastic(:subject) %></th>
+    <th><%= formtastic(:body) %></th>
+    <th></th>
+  </tr>
+  <% for message in @messages %>
+    <tr>
+      <td><%= message.name %></td>
+      <td><%= message.email %></td>
+      <td><%= message.company %></td>
+      <td><%= message.phone %></td>
+      <td><%= message.subject %></td>
+      <td><%= message.body %></td>
+      <td><%= link_to t(:show), message %>
+        | <%= link_to t(:edit), edit_message_path(message) %>
+        | <%= link_to t(:del), message, :confirm => sure?, :method => :delete %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to new_tt(:mail), new_message_path(message) %></p>

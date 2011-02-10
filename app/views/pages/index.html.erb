@@ -1,0 +1,28 @@
+<%= titled pl(:page) %>
+<%= subtitled list_dp(:page) %>
+
+<table>
+  <tr>
+    <th><%= formtastic(:title) %></th>
+    <th><%= formtastic(:subtitle) %></th>
+    <th><%= formtastic(:menu) %></th>
+    <th><%= formtastic(:position) %></th>
+    <th></th>
+  </tr>
+  <% for page in @pages %>
+    <tr>
+      <td><%= page.title %></td>
+      <td><%= page.subtitle %></td>
+      <td><%= page.menu %></td>
+      <td><%= page.position %></td>
+      <td>
+        <%= link_to t(:show), page %>
+        | <%= link_to t(:edit), edit_page_path(page) %>
+        | <%= link_to t(:del), page, :confirm => 'Are you sure?',
+        :method => :delete %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to new(:page), new_page_path(page) %></p>
