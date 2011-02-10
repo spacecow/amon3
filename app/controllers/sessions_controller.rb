@@ -20,14 +20,14 @@ class SessionsController < ApplicationController
   private
 
   def authenticate(login, pass)
-    matching_password?(pass) if login == SITE_CONFIG[:admin]
+    matching_password?(pass) if login == ENV['ADMIN']
   end
 
   def matching_password?(pass)
-    encrypt_password(SITE_CONFIG[:passw]) == encrypt_password(pass)
+    encrypt_password(ENV['PASSW']) == encrypt_password(pass)
   end
 
   def encrypt_password(pass)
-    BCrypt::Engine.hash_secret(pass, SITE_CONFIG[:salt])
+    BCrypt::Engine.hash_secret(pass, ENV['SALT'])
   end  
 end

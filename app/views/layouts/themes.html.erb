@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title><%=h SITE_CONFIG[:app_name] %> | <%=h yield(:title) %></title>
+    <title><%= ENV['APP_NAME'] %> | <%=h yield(:title) %></title>
     <%= use_theme('slicehost') %>
     <%= javascript_include_tag :defaults %>
   </head>
@@ -10,7 +10,7 @@
       <div id='header'>
 
         <div id='logo'>
-          <%= link_to image_tag('amonrevision.jpg', :width => "300", :border => 0, :alt => SITE_CONFIG[:app_name]) %>
+          <%= link_to image_tag('amonrevision.jpg', :width => "300", :border => 0, :alt => ENV['APP_NAME']) %>
         </div>
         
         <ul id='navigation'>
@@ -44,7 +44,7 @@
       </div>
       
       <div id='footer'>
-        &copy <%= Time.now.year %> <%=h SITE_CONFIG[:copyright] %>. All Rights Reserved.
+        &copy <%= Time.now.year %> <%=h ENV['COPYRIGHT'] %>. All Rights Reserved.
       </div>
       
     </div>
