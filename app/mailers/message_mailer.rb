@@ -7,7 +7,7 @@ class MessageMailer < ActionMailer::Base
     @company = message.company
     @phone = message.phone
     @message = message.body
-    @subject = message.subject
-    mail(:to => "Mona Sveholm <mona@amonrevision.se>", :bcc => "Johan Sveholm <jsveholm@gmail.com>", :subject => @subject, :from => "#{message.name} <#{message.email}>")
+    @subj = message.subject
+    mail(:to => "Mona Sveholm <mona@amonrevision.se>", :bcc => "Johan Sveholm <jsveholm@gmail.com>", :subject => @subj, :from => "#{message.name} <#{message.email}>")
   end
 end
