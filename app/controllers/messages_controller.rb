@@ -17,7 +17,7 @@ class MessagesController < ApplicationController
     @message = Message.new(params[:message])
     if @message.save
       flash[:notice] = "Successfully created message."
-      MessageMailer.message_confirmation.deliver
+      MessageMailer.message_confirmation.deliver(@message)
       redirect_to Page.order(:position).first
     else
       render :action => 'new'
