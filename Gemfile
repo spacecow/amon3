@@ -10,7 +10,6 @@ gem 'RedCloth'
 gem "bcrypt-ruby", :require => "bcrypt"
 gem "cancan"
 gem "formtastic"
-gem "compass"
 
 group :development do
   gem "nifty-generators"
