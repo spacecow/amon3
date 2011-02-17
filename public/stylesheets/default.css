@@ -1,0 +1,38 @@
+/* line 1, ../../app/stylesheets/default.sass */
+a {
+  color: #4b7399;
+}
+
+/* line 3, ../../app/stylesheets/default.sass */
+a:visited {
+  color: #4b7399;
+}
+
+/* line 5, ../../app/stylesheets/default.sass */
+a:hover {
+  text-decoration: none;
+  color: #c60071;
+}
+
+/* line 11, ../../app/stylesheets/default.sass */
+div#header ul#navigation li:hover {
+  background: #f6a2c6;
+}
+
+/* line 16, ../../app/stylesheets/default.sass */
+div#content ul li {
+  width: 250px;
+}
+/* line 18, ../../app/stylesheets/default.sass */
+div#content ul li a {
+  float: right;
+}
+
+/* line 21, ../../app/stylesheets/default.sass */
+div#root_footer {
+  float: right;
+}
+/* line 23, ../../app/stylesheets/default.sass */
+div#root_footer img {
+  float: right;
+}

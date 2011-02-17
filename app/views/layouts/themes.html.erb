@@ -1,8 +1,14 @@
 <html>
   <head>
     <title><%= ENV['APP_NAME'] %> | <%=h yield(:title) %></title>
-    <%= use_theme('slicehost') %>
     <%= javascript_include_tag :defaults %>
+    <%= stylesheet_link_tag 'screen.css', :media => 'screen,projection' %>
+    <%= stylesheet_link_tag 'print.css', :media => 'print' %>
+    <!--[if lt IE 8]>
+    <%= stylesheet_link_tag 'ie.css', :media => 'screen, projection' %>
+    <![endif]-->
+    <%= use_theme('slicehost') %>
+    <%= stylesheet_link_tag 'default.css' %>
   </head>
   <body>
   
@@ -39,8 +45,11 @@
         
         <%= yield %>
         
-        <div id='root_footer'></div>
-
+        <div id='root_footer'>
+	  <img alt="Far" src="/images/far.png?1276942354" width="55" />
+        </div>
+	<div class="clear"></div>
+          
       </div>
       
       <div id='footer'>
