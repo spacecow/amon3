@@ -4,3 +4,7 @@ log/*.log
 tmp/**/*
 config/database.yml
 config/site_config.yml
+public/stylesheets/default.css
+public/stylesheets/ie.css
+public/stylesheets/print.css
+public/stylesheets/screen.css
