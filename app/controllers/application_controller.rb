@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  before_filter  :set_p3p
+
   layout "themes"
 
   helper_method :admin?
@@ -12,4 +14,10 @@ class ApplicationController < ActionController::Base
       redirect_to Page.order(:position).first
     end
   end
+
+  private
+
+    def set_p3p
+      response.headers["P3P"]='CP="CAO PSA OUR"'
+    end
 end
